@@ -10,15 +10,11 @@ pipeline {
         stage('checkout'){
             steps{
                 
-                checkout scm
+                
                 steps {
                     sh " ls "
                 }
-                // sh """
-                //     git clone https://github.com/Saideep278/jenkins_kubernetes_practice.git
-                //     cd jenkins_kubernetes_practice
-                //     ls
-                // """
+              
             }
         }
         stage("Commit id"){
