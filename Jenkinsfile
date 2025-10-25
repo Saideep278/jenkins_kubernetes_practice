@@ -20,7 +20,8 @@ pipeline {
         stage("Commit id"){
             steps {
                 script {
-                    env.COMMIT = sh(script: 'git rev-parse  HEAD',returnStdout:true).trim()
+                    env.COMMIT = sh(script: 'git rev-parse --short HEAD',returnStdout:true).trim()
+                    env.COMMIT = sh(script: 'git rev-parse --abbrev-ref HEAD',returnStdout:true).trim()
                 }
             }
         }
