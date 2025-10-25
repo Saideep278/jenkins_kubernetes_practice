@@ -11,9 +11,9 @@ pipeline {
             steps{
                 
                 
-                steps {
+                
                     sh " ls "
-                }
+                
               
             }
         }
@@ -27,7 +27,7 @@ pipeline {
         stage("Dummy"){
             steps{
                 sh """
-                    echo ${COMMIT}
+                    echo ${env.COMMIT}
                 """
             }
         }
