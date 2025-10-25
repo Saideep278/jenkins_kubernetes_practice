@@ -21,7 +21,7 @@ pipeline {
             steps {
                 script {
                     env.COMMIT = sh(script: 'git rev-parse --short HEAD',returnStdout:true).trim()
-                    env.COMMIT = sh(script: 'git rev-parse --abbrev-ref HEAD',returnStdout:true).trim()
+                    env.BRANCH = sh(script: 'git rev-parse --abbrev-ref HEAD',returnStdout:true).trim()
                 }
             }
         }
@@ -29,6 +29,7 @@ pipeline {
             steps{
                 sh """
                     echo ${env.COMMIT}
+                    echo ${env.BRANCH}
                 """
             }
         }
